@@ -2,17 +2,47 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/app.component.login';
+import { BaseComponent } from './components/base/app.component.base';
+import { JobComponent } from './components/home/app.component.home';
 
 @NgModule({
   declarations: [
-    AppComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [LoginComponent]
 })
-export class AppModule { }
+export class LoginModule { }
+
+@NgModule({
+  declarations: [
+    BaseComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [BaseComponent]
+})
+export class BaseModule { }
+
+@NgModule({
+  declarations: [
+    JobComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [JobComponent]
+})
+export class JobModule { }
+
+

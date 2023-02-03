@@ -1,0 +1,43 @@
+<router-outlet></router-outlet>
+
+<div class="display-count">
+    <label>Display: </label>
+    <button class="btn" (click)="displayEntries(10)">10</button>
+    <button class="btn" (click)="displayEntries(100)">100</button>
+    <button class="btn add-new" id="add-new">Add New</button>
+</div>
+<table id="job-table">
+    <thead>
+    <tr>
+        <th id="job-id">Job ID</th>
+        <th id="cust-id">Customer ID</th>
+        <th id="cust-name">Customer Name</th>
+        <th id="job-desc">Job Description</th>
+        <th id="due-date">Due Date</th>
+        <th id="recurring">Recurring</th>
+        <th id="recur-weeks">Recur Every (weeks)</th>
+        <th id="due-date-2">Due Date</th>
+        <th id="comments">Comments</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Use Angular or JavaScript to dynamically add rows for each job information -->
+    <tr *ngFor="let job of jobs">
+        <td>{{ job.jobId }}</td>
+        <td>{{ job.customerId }}</td>
+        <td>{{ job.customerName }}</td>
+        <td>{{ job.jobDescription }}</td>
+        <td>{{ job.dueDate }}</td>
+        <td>{{ job.recurring }}</td>
+        <td>{{ job.recurWeeks }}</td>
+        <td>{{ job.dueDate2 }}</td>
+        <td>{{ job.comments }}</td>
+        <td>
+        <button class="btn complete" (click)="completeJob(job)">Finish</button>
+        <button class="btn edit" (click)="editJob(job)">Edit</button>
+        <button class="btn delete" (click)="deleteJob(job)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

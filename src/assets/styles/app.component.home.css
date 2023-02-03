@@ -1,0 +1,60 @@
+.display-count {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .display-count label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .add-new {
+    background-color: green;
+    color: white;
+  }
+  
+  #job-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #job-table th {
+    padding: 10px;
+    text-align: left;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    border: 1px solid #ccc;
+  }
+  
+  #job-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .complete {
+    background-color: green;
+    color: white;
+  }
+  
+  .edit {
+    background-color: blue;
+    color: white;
+  }
+  
+  .delete {
+    background-color: red;
+    color: white;
+  }
+  

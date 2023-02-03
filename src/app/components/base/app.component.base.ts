@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { User } from '../../models/user.model';
+import { UserType } from '../../models/user.model';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.base.html',
+  styleUrls: ['../../../assets/styles/app.component.login.css']
+})
+
+export class BaseComponent {
+  title = 'my-app';
+}
