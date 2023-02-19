@@ -7,7 +7,7 @@ export class Job {
     recurring: boolean;
     recurWeeks: number;
     comments: string;
-    
+
     constructor(
       jobId: number,
       customerId: number,

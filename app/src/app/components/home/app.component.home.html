@@ -1,10 +1,13 @@
 <router-outlet></router-outlet>
 
+<div class="container">
 <div class="display-count">
+    <div class top-display>
     <label>Display: </label>
     <button class="btn" (click)="displayEntries(10)">10</button>
     <button class="btn" (click)="displayEntries(100)">100</button>
-    <button class="btn add-new" id="add-new">Add New</button>
+    <button class="btn add-new" id="add-new" (click)="addJob()">Add New</button>
+    </div>
 </div>
 <table id="job-table">
     <thead>
@@ -41,3 +44,5 @@
     </tr>
     </tbody>
 </table>
+
+</div>

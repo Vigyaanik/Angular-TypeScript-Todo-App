@@ -1,0 +1,27 @@
+{
+    "jobs": [
+      {
+        "id": 1,
+        "customerId": "c1",
+        "customerName": "John Doe",
+        "jobDescription": "Build a website",
+        "dueDate": "2023-01-01",
+        "recurring": false,
+        "recurWeeks": null,
+        "dueDate2": null,
+        "comments": "none"
+      },
+      {
+        "id": 2,
+        "customerId": "c2",
+        "customerName": "Jane Doe",
+        "jobDescription": "Build an app",
+        "dueDate": "2023-01-01",
+        "recurring": true,
+        "recurWeeks": 4,
+        "dueDate2": "2023-01-29",
+        "comments": "none"
+      }
+    ]
+  }
+  

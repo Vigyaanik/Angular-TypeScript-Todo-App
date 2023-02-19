@@ -7,17 +7,21 @@
   .display-count label {
     font-weight: bold;
     margin-right: 10px;
+    color: white;
+    margin-left: 20px;
   }
   
   .btn {
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: white;
+    background-color: grey;
     margin-right: 10px;
     cursor: pointer;
     font-size: 14px;
     text-transform: uppercase;
+    margin-top: 10px;
+    color: white;
   }
   
   .add-new {
@@ -58,3 +62,6 @@
     color: white;
   }
   
+  .container {
+    background-color: rgb(39, 39, 39);
+  }

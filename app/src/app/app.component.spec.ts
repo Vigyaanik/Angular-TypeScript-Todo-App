@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LoginComponent } from './components/login/app.component.login';
 import { BaseComponent } from './components/base/app.component.base';
 import { JobComponent } from './components/home/app.component.home';
+import { JobAddComponent } from './components/add-job/app.component.add-job';
 
 describe('LoginComponent', () => {
   beforeEach(async () => {
