@@ -7,6 +7,7 @@ import { createUserRouter } from "./routes/create_user";
 import { createJobRouter } from "./routes/create_job";
 import { createTranslateRouter } from "./routes/create_translate";
 import { deleteJobRouter } from "./routes/delete_job";
+import { fetchJobsRouter } from "./routes/fetch_jobs";
 
 const app = express();
 
@@ -29,6 +30,7 @@ const main = async () => {
     app.use(createJobRouter)
     app.use(createTranslateRouter)
     app.use(deleteJobRouter)
+    app.use(fetchJobsRouter)
     app.listen(8080, () => {
         console.log('Server started on port 8080')
     })
