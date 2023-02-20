@@ -7,18 +7,19 @@
         <div class="current-button-2"></div>
         <button type="button" class="the-buttons" [ngClass]="{'active': currentPage === 'register'}" (click)="showRegister()">Register</button>
       </div>
-      <form *ngIf="showLoginForm" id="log-in" class="input-data-class">
-        <input type="text" id="input-data-id" name="Username" placeholder="Username" required>
-        <input type="password" id="input-data-id" name="Pass" placeholder="Password" required>
+      <form *ngIf="showLoginForm" (ngSubmit)="onSubmit2(loginForm)" #loginForm="ngForm" id="log-in" class="input-data-class">
+        <input type="text" id="input-data-id" name="Username" placeholder="Username" required ngModel>
+        <input type="password" id="input-data-id" name="Pass" placeholder="Password" required ngModel>
         <small id="checkbox-id">Your data is safe with us!</small>
         <input type="submit" id="submit-button" value="Submit">
       </form>
 
-      <form *ngIf="showRegisterForm" id="register" class="input-data-class">
-        <input type="text" id="input-data-id" name="Username" placeholder="Username" required>
-        <input type="password" id="input-data-id" name="Pass" placeholder="Password" required>
-        <input type="email" id="input-data-id" name="id" placeholder="Email ID" required>
+      <form *ngIf="showRegisterForm" (ngSubmit)="onSubmit(registerForm)" id="register" class="input-data-class" #registerForm="ngForm">
+        <input type="text" id="input-data-id" name="username" placeholder="Username" required ngModel>
+        <input type="password" id="input-data-id" name="password" placeholder="Password" required ngModel>
+        <input type="email" id="input-data-id" name="email" placeholder="Email ID" required ngModel>
         <input type="submit" id="submit-button" value="Register">
       </form>
+      
     </div>
   </div>

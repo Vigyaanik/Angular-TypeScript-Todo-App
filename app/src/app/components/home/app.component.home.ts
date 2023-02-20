@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { Job } from '../../models/job.model';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { MyDataService } from 'src/app/services/my-data-service';
+import { UsersCheckService } from 'src/app/services/users-check.service';
 
+// import {} from '../../services';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.home.html',
@@ -11,8 +15,24 @@ import { Router } from '@angular/router';
 export class JobComponent {
     title = 'my-app';
     jobs: any[] = [];
-  
-    constructor(private router: Router) { }
+    myData: any;
+    isLoggedIn: boolean = false;
+    constructor(private router: Router, private myDataService: MyDataService, private usersCheckService: UsersCheckService ) { 
+      this.usersCheckService.isLoggedIn().subscribe((loggedIn) => {
+        console.log(this.isLoggedIn)
+        this.isLoggedIn = loggedIn;
+        console.log(this.isLoggedIn)
+        console.log("Component load!");
+      });
+    }
+
+    ngOnInit(): void {
+      console.log("Before subscribe method!");
+      this.myDataService.getData().subscribe((data) => {
+        console.log("Hello world");
+        this.jobs = <any[]>data;
+      })
+    }
 
     displayEntries(count: number) {
       // Implementation to display the specified number of entries
@@ -21,7 +41,7 @@ export class JobComponent {
         
         // display the retrieved jobs
         displayedJobs.forEach(job => {
-          console.log(`Job ID: ${job.jobId}`);
+          console.log(`Job ID: ${job.id}`);
           console.log(`Customer ID: ${job.customerId}`);
           console.log(`Customer Name: ${job.customerName}`);
           console.log(`Job Description: ${job.jobDescription}`);
@@ -32,6 +52,10 @@ export class JobComponent {
         });
     }
         
+    logout(): void {
+      this.usersCheckService.logout();
+      this.isLoggedIn = false;
+    }
   
     editJob(job: any) {
       // Implementation to edit the job
@@ -49,4 +73,5 @@ export class JobComponent {
       // Implementation to add the job
       this.router.navigate(['/add-job']);
     }
+
 }

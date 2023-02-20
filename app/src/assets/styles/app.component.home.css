@@ -45,6 +45,7 @@
   #job-table td {
     padding: 10px;
     border: 1px solid #ccc;
+    color: white;
   }
   
   .complete {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Job } from '../../models/job.model';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { JobService } from 'src/app/services/job.service';
 
 
 @Component({
@@ -17,19 +18,12 @@ export class JobAddComponent {
     datenow = Date.now();
     dated = new Date(this.datenow);
     job = new Job(0, 0, '', '', this.dated, false, 0, '');
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient, private jobService: JobService) {
   }
-
-
-    onSubmit(job:Job) {
-        // submit form data to a backend API or add data to local data model
-
-        this.http.post('http://localhost:3000/jobs', job)
-            .subscribe(res => {
-                console.log(res);
-            });
-
-        // navigate to another page after form submission
-        this.router.navigate(['/home']);
-    }
+    onSubmit(job: Job) {
+        this.jobService.addJob(this.job).subscribe((data) => {
+          console.log(data);
+          this.router.navigate(['/home']);
+        });
+      }
 }

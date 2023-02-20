@@ -1,4 +1,7 @@
+
+
 <router-outlet></router-outlet>
+<button (click)="logout()">Logout</button>
 
 <div class="container">
 <div class="display-count">
@@ -27,7 +30,7 @@
     <tbody>
     <!-- Use Angular or JavaScript to dynamically add rows for each job information -->
     <tr *ngFor="let job of jobs">
-        <td>{{ job.jobId }}</td>
+        <td>{{ job.id }}</td>
         <td>{{ job.customerId }}</td>
         <td>{{ job.customerName }}</td>
         <td>{{ job.jobDescription }}</td>
