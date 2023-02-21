@@ -18,12 +18,7 @@ export class JobComponent {
     myData: any;
     isLoggedIn: boolean = false;
     constructor(private router: Router, private myDataService: MyDataService, private usersCheckService: UsersCheckService ) { 
-      this.usersCheckService.isLoggedIn().subscribe((loggedIn) => {
-        console.log(this.isLoggedIn)
-        this.isLoggedIn = loggedIn;
-        console.log(this.isLoggedIn)
-        console.log("Component load!");
-      });
+      this.isLoggedIn = this.usersCheckService.isLoggedIn();
     }
 
     ngOnInit(): void {
@@ -50,6 +45,10 @@ export class JobComponent {
           console.log(`Recur Weeks: ${job.recurWeeks}`);
           console.log(`Comments: ${job.comments}`);
         });
+    }
+
+    translate() {
+      
     }
         
     logout(): void {

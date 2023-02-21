@@ -18,6 +18,7 @@ export class LoginComponent {
     showRegisterForm = false;
     currentPage = 'login';
     public errorMessage: string = "";
+    loginForm!: NgForm;  // <---- initialize the property with null assertion operator
 
     constructor(private router: Router, private usersService: UsersService, private usersCheckService: UsersCheckService) { }
 
@@ -41,6 +42,8 @@ export class LoginComponent {
 
       this.usersCheckService.checkUser(username, password).subscribe({
         next: () => {
+          console.log("The status of password match: ")
+          console.log(this.usersCheckService.isLoggedIn());
           if (this.usersCheckService.isLoggedIn()) {
             this.router.navigate(['/home']);
           } else {
