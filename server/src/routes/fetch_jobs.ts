@@ -9,6 +9,7 @@ router.get("/api/jobs", async (req, res) => {
     // .select("job")
     // .from(Job, "job")
     // .where() // add conditions here
+    console.log("Data sent...");
     return res.json(jobs);
 })
 

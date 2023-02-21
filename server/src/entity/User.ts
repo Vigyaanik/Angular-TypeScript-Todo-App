@@ -1,8 +1,9 @@
 import { Entity, BaseEntity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
 import { Translate } from './Translate';
-@Entity('user')   
-export class User  extends BaseEntity{
+
+@Entity('user')
+export class User extends BaseEntity{
 
     @PrimaryColumn({
         unique: true
@@ -18,7 +19,8 @@ export class User  extends BaseEntity{
     email: string;
 
     @Column({
-        default: false
+        default: false,
+        nullable: true
     })
     is_active: boolean;
 
