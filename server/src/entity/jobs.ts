@@ -31,4 +31,14 @@ export class Job extends BaseEntity{
     nullable: true
   })
   comments: string;
+
+  @Column({
+    default: false
+  })
+  paymentReceived: boolean;
+
+  @Column({
+    default: false
+  })
+  jobComplete: boolean;
 }
