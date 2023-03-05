@@ -21,7 +21,9 @@ export class Job {
       comments: string,
       jobComplete: boolean,
       paymentReceived: boolean
-    ) {
+    ) 
+    
+    {
       this.jobId = jobId;
       this.customerId = customerId;
       this.customerName = customerName;

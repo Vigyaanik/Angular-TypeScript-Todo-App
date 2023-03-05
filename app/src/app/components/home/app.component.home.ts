@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MyDataService } from 'src/app/services/my-data-service';
 import { UsersCheckService } from 'src/app/services/users-check.service';
-import { DeleteJobService } from 'src/app/services/delete-job.service'
+import { DeleteJobService } from 'src/app/services/delete-job.service';
+import { UpdateJobService } from 'src/app/services/update-job.service';
 
 // import {} from '../../services';
 @Component({
@@ -18,7 +19,7 @@ export class JobComponent {
     jobs: any[] = [];
     myData: any;
     isLoggedIn: boolean = false;
-    constructor(private router: Router, private myDataService: MyDataService, private usersCheckService: UsersCheckService, private deleteJobService: DeleteJobService ) { 
+    constructor(private router: Router, private myDataService: MyDataService, private usersCheckService: UsersCheckService, private deleteJobService: DeleteJobService, private updateJobService: UpdateJobService ) { 
       this.isLoggedIn = this.usersCheckService.isLoggedIn();
     }
 
@@ -65,6 +66,7 @@ export class JobComponent {
   
     editJob(job: any) {
       // Implementation to edit the job
+      this.router.navigate(['/edit-job', job.id]);
     }
   
     deleteJob(job: any) {

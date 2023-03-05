@@ -10,6 +10,7 @@ import { deleteJobRouter } from "./routes/delete_job";
 import { fetchJobsRouter } from "./routes/fetch_jobs";
 import { fetchUsersRouter } from "./routes/fetch_users";
 import { updateJobRouter } from "./routes/update_job";
+import { fetchOneJobRouter } from "./routes/fetch_one_job";
 
 // const bodyParser = require('body-parser');
 // const jwt = require('jsonwebtoken');
@@ -63,6 +64,7 @@ const main = async () => {
     app.use(fetchJobsRouter)
     app.use(fetchUsersRouter)
     app.use(updateJobRouter)
+    app.use(fetchOneJobRouter)
     app.listen(8080, () => {
         console.log('Server started on port 8080')
     })

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../../models/user.model';
 import { UserType } from '../../models/user.model';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.base.html',

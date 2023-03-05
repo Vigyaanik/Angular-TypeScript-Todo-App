@@ -12,13 +12,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { JobUpdateComponent } from './components/update-job/app.component.update-job';
 
 @NgModule({
   declarations: [
     LoginComponent,
     BaseComponent,
     JobComponent,
-    JobAddComponent
+    JobAddComponent,
+    JobUpdateComponent
   ],
   imports: [
     BrowserModule,
