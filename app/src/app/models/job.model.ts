@@ -7,6 +7,8 @@ export class Job {
     recurring: boolean;
     recurWeeks: number;
     comments: string;
+    jobComplete: boolean;
+    paymentReceived: boolean;
 
     constructor(
       jobId: number,
@@ -16,7 +18,9 @@ export class Job {
       dueDate: Date,
       recurring: boolean,
       recurWeeks: number,
-      comments: string
+      comments: string,
+      jobComplete: boolean,
+      paymentReceived: boolean
     ) {
       this.jobId = jobId;
       this.customerId = customerId;
@@ -26,5 +30,7 @@ export class Job {
       this.recurring = recurring;
       this.recurWeeks = recurWeeks;
       this.comments = comments;
+      this.jobComplete = jobComplete;
+      this.paymentReceived = paymentReceived;
     }
   }

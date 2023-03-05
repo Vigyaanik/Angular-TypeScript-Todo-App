@@ -1,15 +1,17 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs';
+import { Job } from '../models/job.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class MyDataService {
-    constructor( private http: HttpClient) { }
-
-    getData() {
-        console.log("Fetching data...");
-        return this.http.get('http://localhost:8080/api/jobs');
+    private baseUrl = 'http://localhost:8080/api/jobs';
+  
+    constructor(private http: HttpClient) { }
+  
+    getData(): Observable<Job[]> {
+      return this.http.get<Job[]>(this.baseUrl);
     }
-
 }

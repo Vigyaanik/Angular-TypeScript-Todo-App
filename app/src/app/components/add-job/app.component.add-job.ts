@@ -17,7 +17,7 @@ export class JobAddComponent {
   
     datenow = Date.now();
     dated = new Date(this.datenow);
-    job = new Job(0, 0, '', '', this.dated, false, 0, '');
+    job = new Job(0, 0, '', '', this.dated, false, 0, '', false, false);
   constructor(private router: Router, private http: HttpClient, private jobService: JobService) {
   }
     onSubmit(job: Job) {

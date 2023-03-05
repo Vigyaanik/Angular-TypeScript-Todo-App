@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MyDataService } from 'src/app/services/my-data-service';
 import { UsersCheckService } from 'src/app/services/users-check.service';
+import { DeleteJobService } from 'src/app/services/delete-job.service'
 
 // import {} from '../../services';
 @Component({
@@ -17,16 +18,22 @@ export class JobComponent {
     jobs: any[] = [];
     myData: any;
     isLoggedIn: boolean = false;
-    constructor(private router: Router, private myDataService: MyDataService, private usersCheckService: UsersCheckService ) { 
+    constructor(private router: Router, private myDataService: MyDataService, private usersCheckService: UsersCheckService, private deleteJobService: DeleteJobService ) { 
       this.isLoggedIn = this.usersCheckService.isLoggedIn();
     }
 
     ngOnInit(): void {
       console.log("Before subscribe method!");
-      this.myDataService.getData().subscribe((data) => {
+      this.myDataService.getData().subscribe((jobs: Job[]) => { // Specify the type of the jobs array in the subscription
         console.log("Hello world");
-        this.jobs = <any[]>data;
+        this.getJobs(); // Assign the retrieved jobs to the jobs array
       })
+    }
+
+    getJobs() {
+      this.myDataService.getData().subscribe((jobs: Job[]) => {
+        this.jobs = jobs;
+      });
     }
 
     displayEntries(count: number) {
@@ -62,6 +69,13 @@ export class JobComponent {
   
     deleteJob(job: any) {
       // Implementation to delete the job
+
+      this.deleteJobService.deleteJob(job.id).subscribe((data) => {
+        console.log(data);
+        this.getJobs();
+        this.router.navigate(['/home']);
+      });
+
     }
 
     completeJob(job: any) {
